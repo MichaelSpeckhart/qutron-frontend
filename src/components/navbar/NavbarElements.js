@@ -1,5 +1,5 @@
 // STL imports
-import React, { useState } from 'react'
+import React, { } from 'react'
 import { Link } from 'react-router-dom'
 import { } from 'lucide-react'
 
@@ -9,11 +9,11 @@ import { } from 'lucide-react'
  * @returns JSX.Element
  */
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    }
+    // const toggleMenu = () => {
+    //     setIsOpen(!isOpen);
+    // }
 
     
 
