@@ -1,7 +1,7 @@
 // STL imports
 import React, { useState } from 'react';
 // Only need Link and useNavigate here
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // Internal Page and CSS imports
 import "../styles/global.css"
@@ -19,9 +19,9 @@ function Home() {
     setInputText(event.target.value);
   };
 
-  const onPressSubmit = (event) => {
-    console.log("Hello");
-  }
+  // const onPressSubmit = (event) => {
+  //   console.log("Hello");
+  // }
 
   return (
     <div>
