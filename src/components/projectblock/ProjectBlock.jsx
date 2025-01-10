@@ -18,7 +18,7 @@ const ProjectBlock = ( {
     
     return (
         <div className="space-y-4">
-        { }a
+        { }
         <h2 className="text-2xl font-bold">{title}</h2>
       
         { }

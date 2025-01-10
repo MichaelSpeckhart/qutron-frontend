@@ -7,6 +7,7 @@ import Navbar from '../components/navbar/NavbarElements';
 // import TextBlock from '../components/textblock/Textblock'
 // import PDFViewer from '../components/pdf/PDFViewer';
 import ProjectBlock from '../components/projectblock/ProjectBlock';
+import Footer from '../components/footer/Footer';
 
 /**
  * @summary 
