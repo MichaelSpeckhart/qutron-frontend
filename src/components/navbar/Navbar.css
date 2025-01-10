@@ -1,18 +1,61 @@
+/* Navbar.css */
 .navbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background-color: #007bff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: var(--spacing-base);
+    background-color: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-border-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .navbar-left {
-    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    margin-right: var(--spacing-lg);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.navbar-right {
+    margin-left: auto; /* Pushes the sign-in button to the right */
+    padding-left: var(--spacing-lg);
+}
+
+.sign-in-button {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-accent);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.sign-in-button:hover {
+    background-color: #2563eb; /* Slightly darker blue */
+    transform: translateY(-1px);
 }
 
 .navbar-center {
-    flex-grow: 1;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links {
@@ -20,26 +63,55 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: var(--spacing-lg);
 }
 
-.nav-links li {
-    margin-right: 2rem;
-}
 
 .nav-link {
     text-decoration: none;
-    color: #333;
+    color: var(--color-text-secondary);
     font-weight: 500;
+    font-size: var(--font-size-base);
     padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
 }
 
 .nav-link:hover {
-    color: #007bff;
+    color: var(--color-text-accent);
+    background-color: var(--color-bg-secondary);
+}
+
+.nav-link.active {
+    color: var(--color-text-accent);
+    background-color: var(--color-bg-secondary);
 }
 
 .logo {
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: 1.2rem;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: var(--font-size-xl);
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: var(--spacing-base) var(--spacing-base);
+    }
+
+    .nav-links {
+        gap: var(--spacing-base);
+    }
+
+    .nav-link {
+        padding: 0.25rem 0.75rem;
+    }
 }

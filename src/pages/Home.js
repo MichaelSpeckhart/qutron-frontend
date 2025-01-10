@@ -1,16 +1,13 @@
 // STL imports
 import React, { useState } from 'react';
-// Only need Link and useNavigate here
 import { useNavigate } from 'react-router-dom';
 
 // Internal Page and CSS imports
 import "../styles/global.css"
 import Navbar from '../components/navbar/NavbarElements';
+import Footer from '../components/footer/Footer'
+import ParticleBackground from '../components/background/ParticleBackground';  // Add this import
 
-/**
- * @summary Home page for the website
- * @returns JSX.Element
- */
 function Home() {
   const [inputText, setInputText] = useState('');
   const navigate = useNavigate();
@@ -19,32 +16,20 @@ function Home() {
     setInputText(event.target.value);
   };
 
-  // const onPressSubmit = (event) => {
-  //   console.log("Hello");
-  // }
-
   return (
-    <div>
-      <Navbar /> 
-      <div className="home">
-        <h1>Welcome to Qutron</h1>
-        <input
-          type="text"
-          value={inputText}
-          onChange={handleInputChange}
-          placeholder="Enter your text here"
-          className="textbox"
-        />
-        <button 
-          onClick={() => console.log(inputText)}
-          title="Submit"
-          color="#841584"
-          accessibilityLabel="LearnMore"
-          className="button"
-        > 
-          Button 
-        </button>
-      </div>
+    <div className="flex flex-col min-h-screen relative"> {/* Added relative */}
+      <Navbar />
+      <main className="flex-grow relative z-10"> {/* Added relative and z-10 */}
+        <div className="container mx-auto px-4 py-8">
+        
+          <div className="home flex flex-col items-center space-y-6">
+            
+            <h1 className="fade-in-1 text-6xl font-bold mb-6 text-gradient">Welcome to Qutron</h1>
+            <ParticleBackground /> {/* Add the particle background */}
+          </div>
+        </div>
+      </main>
+      <Footer className="relative z-10" /> {/* Added relative and z-10 */}
     </div>
   );
 }
