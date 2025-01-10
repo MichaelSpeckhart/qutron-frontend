@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/qutron-frontend/static/css/main.b6a748b1.css",
+    "main.js": "/qutron-frontend/static/js/main.28f6d84d.js",
+    "static/js/488.083b6804.chunk.js": "/qutron-frontend/static/js/488.083b6804.chunk.js",
+    "index.html": "/qutron-frontend/index.html",
+    "main.b6a748b1.css.map": "/qutron-frontend/static/css/main.b6a748b1.css.map",
+    "main.28f6d84d.js.map": "/qutron-frontend/static/js/main.28f6d84d.js.map",
+    "488.083b6804.chunk.js.map": "/qutron-frontend/static/js/488.083b6804.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b6a748b1.css",
+    "static/js/main.28f6d84d.js"
+  ]
+}
