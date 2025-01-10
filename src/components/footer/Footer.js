@@ -33,6 +33,9 @@ const Footer = () => {
                         <FooterLink href="#">
                             Blog
                         </FooterLink>
+                        <FooterText>
+                            @ 2025 Qutron LLC
+                        </FooterText>
                     </Column>
                     <Column>
                         <Heading>Product</Heading>

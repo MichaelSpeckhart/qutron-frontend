@@ -13,6 +13,15 @@ export const Box = styled.div`
     }
 `;
 
+export const FooterText = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-center: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-base);
+`
+
 export const FooterContainer = styled.div`
     display: flex;
     flex-direction: column;
