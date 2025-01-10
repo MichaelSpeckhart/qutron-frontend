@@ -3,9 +3,9 @@ import React from 'react';
 
 // Internal imports
 import "../styles/global.css"
-import Navbar from '../components/navbar/NavbarElements';
-import TextBlock from '../components/textblock/Textblock'
-import PDFViewer from '../components/pdf/PDFViewer';
+// import Navbar from '../components/navbar/NavbarElements';
+// import TextBlock from '../components/textblock/Textblock'
+// import PDFViewer from '../components/pdf/PDFViewer';
 import ProjectBlock from '../components/projectblock/ProjectBlock';
 
 /**
