@@ -7,6 +7,7 @@ import {
     Column,
     FooterLink,
     Heading,
+    FooterText
 } from "./FooterStyles"
 
 const Footer = () => {
@@ -34,7 +35,7 @@ const Footer = () => {
                             Blog
                         </FooterLink>
                         <FooterText>
-                            @ 2025 Qutron LLC
+                            © {new Date().getFullYear()} Qutron LLC
                         </FooterText>
                     </Column>
                     <Column>

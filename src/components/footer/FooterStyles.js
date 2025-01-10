@@ -13,13 +13,13 @@ export const Box = styled.div`
     }
 `;
 
-export const FooterText = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-center: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-base);
+
+export const FooterText = styled.p`
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-base);
+    font-size: var(--font-size-base);
+    text-align: center;
+    margin-top: var(--spacing-lg);
 `
 
 export const FooterContainer = styled.div`
