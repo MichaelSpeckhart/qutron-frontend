@@ -1,6 +1,5 @@
-// import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';  // Change this line
 
 // Page imports
 import Home from './pages/Home'
@@ -9,13 +8,13 @@ import Projects from './pages/Projects';
 
 function App() {
   return (
-    <Router>
+    <HashRouter>  {/* Change this line */}
       <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/About" element={<About />} />
             <Route path="/Projects" element={<Projects />}/>
-        </Routes>
-    </Router>
+      </Routes>
+    </HashRouter>  {/* And this line */}
   );
 }
 
