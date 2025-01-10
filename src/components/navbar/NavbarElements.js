@@ -1,6 +1,7 @@
 // STL imports
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Menu, X } from 'lucide-react'
 
 /**
  * @summary Reusable navigation bar. 
@@ -8,6 +9,14 @@ import { Link } from 'react-router-dom'
  * @returns JSX.Element
  */
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    }
+
+    
+
     return (
         <nav className='navbar'>
             <div className='navbar-left'>
@@ -25,6 +34,11 @@ const Navbar = () => {
                     <li>
                         <Link to='/about' className='nav-link'>
                             About
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/projects' className='nav-link'>
+                            Projects
                         </Link>
                     </li>
                 </ul>

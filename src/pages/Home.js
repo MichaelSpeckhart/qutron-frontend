@@ -25,7 +25,7 @@ function Home() {
 
   return (
     <div>
-      <Navbar /> {/* The navigation bar is correctly placed here */}
+      <Navbar /> 
       <div className="home">
         <h1>Welcome to Qutron</h1>
         <input
@@ -48,7 +48,5 @@ function Home() {
     </div>
   );
 }
-
-// ... rest of your code ...
 
 export default Home;
