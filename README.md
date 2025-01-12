@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Qutron Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Qutron's website project created in React.
 
 ## Available Scripts
 
