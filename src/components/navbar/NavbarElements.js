@@ -10,6 +10,10 @@ const Navbar = () => {
         return location.pathname === path ? 'nav-link active' : 'nav-link';
     };
 
+    const navLinks = [
+        { path: '/', label: 'Home'}
+    ];
+
     return (
         <nav className='navbar'>
             <div className="container">

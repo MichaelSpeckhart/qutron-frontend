@@ -34,9 +34,6 @@ const Footer = () => {
                         <FooterLink href="#">
                             Blog
                         </FooterLink>
-                        <FooterText>
-                            © {new Date().getFullYear()} Qutron LLC
-                        </FooterText>
                     </Column>
                     <Column>
                         <Heading>Product</Heading>
@@ -102,6 +99,9 @@ const Footer = () => {
                         </FooterLink>
                     </Column>
                 </Row>
+                <FooterText>
+                            © {new Date().getFullYear()} Qutron LLC
+                </FooterText>
             </FooterContainer>
         </Box>
     );

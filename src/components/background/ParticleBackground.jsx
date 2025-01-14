@@ -12,21 +12,21 @@ const ParticleBackground = () => {
     let particles = [];
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      // Use clientWidth and clientHeight instead of innerWidth/innerHeight
+      canvas.width = canvas.clientWidth;
+      canvas.height = canvas.clientHeight;
     };
 
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = 2;
+        this.size = 4;
         this.baseX = this.x;
         this.baseY = this.y;
         this.density = (Math.random() * 30) + 1;
-        // Add velocity properties
         this.velocity = {
-          x: (Math.random() - 0.5) * 2,  // Random velocity between -1 and 1
+          x: (Math.random() - 0.5) * 2,
           y: (Math.random() - 0.5) * 2
         };
       }
@@ -40,11 +40,9 @@ const ParticleBackground = () => {
       }
 
       update() {
-        // Update position based on velocity
         this.x += this.velocity.x;
         this.y += this.velocity.y;
 
-        // Bounce off edges
         if (this.x <= 0 || this.x >= canvas.width) {
           this.velocity.x *= -1;
         }
@@ -52,7 +50,6 @@ const ParticleBackground = () => {
           this.velocity.y *= -1;
         }
 
-        // Mouse interaction
         const mouse = {
           x: mouseRef.current.x,
           y: mouseRef.current.y
@@ -75,13 +72,12 @@ const ParticleBackground = () => {
           const opacity = (maxDistance - distance) / maxDistance;
           ctx.beginPath();
           ctx.strokeStyle = `rgba(59, 130, 246, ${opacity * 0.5})`;
-          ctx.lineWidth = opacity * 2;
+          ctx.lineWidth = opacity * 10;
           ctx.moveTo(this.x, this.y);
           ctx.lineTo(mouse.x, mouse.y);
           ctx.stroke();
         }
 
-        // Keep particles within bounds
         this.x = Math.max(0, Math.min(this.x, canvas.width));
         this.y = Math.max(0, Math.min(this.y, canvas.height));
       }
@@ -118,9 +114,12 @@ const ParticleBackground = () => {
       init();
     };
 
-    resizeCanvas();
-    init();
-    animate();
+    // Initial setup
+    setTimeout(() => {
+      resizeCanvas();
+      init();
+      animate();
+    }, 0);
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);
@@ -133,10 +132,13 @@ const ParticleBackground = () => {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full -z-10"
-    />
+    <div className="fixed inset-0 overflow-hidden">
+      <canvas
+        ref={canvasRef}
+        className="absolute top-0 left-0 w-full h-full -z-10"
+        style={{ margin: 0, padding: 0 }}
+      />
+    </div>
   );
 };
 

@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-qutronfrontend-dev-8f314-authRole",
+      "UnauthRoleArn": "arn:aws:iam::475285987423:role/amplify-qutronfrontend-dev-8f314-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::475285987423:role/amplify-qutronfrontend-dev-8f314-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-qutronfrontend-dev-8f314-deployment",
+      "UnauthRoleName": "amplify-qutronfrontend-dev-8f314-unauthRole",
+      "StackName": "amplify-qutronfrontend-dev-8f314",
+      "StackId": "arn:aws:cloudformation:us-east-2:475285987423:stack/amplify-qutronfrontend-dev-8f314/0f5f2b60-d2ba-11ef-90a5-0a7ec38c1e31",
+      "AmplifyAppId": "d32fw5qpppwsh9"
+    }
+  }
+}

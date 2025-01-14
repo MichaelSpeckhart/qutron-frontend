@@ -6,6 +6,10 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects';
 
+import { Amplify } from 'aws-amplify';
+import config from './aws-exports';
+Amplify.configure(config);
+
 function App() {
   return (
     <Router>
