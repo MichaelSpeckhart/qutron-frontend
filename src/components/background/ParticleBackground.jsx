@@ -1,27 +1,31 @@
 import React, { useEffect, useRef } from 'react';
 
-const ParticleBackground = () => {
+const ParticleBackground = ({ containerRef }) => {
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: 0, y: 0 });
   const particlesRef = useRef([]);
   const animationFrameRef = useRef();
 
   useEffect(() => {
+    // Check if containerRef and containerRef.current are valid before proceeding
+    const container = containerRef?.current;
+    if (!container) return;
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     let particles = [];
 
     const resizeCanvas = () => {
-      // Use clientWidth and clientHeight instead of innerWidth/innerHeight
-      canvas.width = canvas.clientWidth;
-      canvas.height = canvas.clientHeight;
+      // Set canvas size to match the container's size
+      canvas.width = container.offsetWidth;
+      canvas.height = container.offsetHeight;
     };
 
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = 4;
+        this.size = 2;
         this.baseX = this.x;
         this.baseY = this.y;
         this.density = (Math.random() * 30) + 1;
@@ -54,25 +58,25 @@ const ParticleBackground = () => {
           x: mouseRef.current.x,
           y: mouseRef.current.y
         };
-    
+
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         const maxDistance = 100;
-    
+
         if (distance < maxDistance) {
           const force = (maxDistance - distance) / maxDistance;
           const directionX = dx / distance || 0;
           const directionY = dy / distance || 0;
           const speed = force * 2;
-    
+
           this.x += directionX * speed;
           this.y += directionY * speed;
-    
+
           const opacity = (maxDistance - distance) / maxDistance;
           ctx.beginPath();
           ctx.strokeStyle = `rgba(59, 130, 246, ${opacity * 0.5})`;
-          ctx.lineWidth = opacity * 10;
+          ctx.lineWidth = opacity * 2;
           ctx.moveTo(this.x, this.y);
           ctx.lineTo(mouse.x, mouse.y);
           ctx.stroke();
@@ -82,7 +86,7 @@ const ParticleBackground = () => {
         this.y = Math.max(0, Math.min(this.y, canvas.height));
       }
     }
-    
+
     const handleMouseMove = (event) => {
       const rect = canvas.getBoundingClientRect();
       mouseRef.current = {
@@ -114,12 +118,9 @@ const ParticleBackground = () => {
       init();
     };
 
-    // Initial setup
-    setTimeout(() => {
-      resizeCanvas();
-      init();
-      animate();
-    }, 0);
+    resizeCanvas();
+    init();
+    animate();
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);
@@ -129,16 +130,20 @@ const ParticleBackground = () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationFrameRef.current);
     };
-  }, []);
+  }, [containerRef]);
 
   return (
-    <div className="fixed inset-0 overflow-hidden">
-      <canvas
-        ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full -z-10"
-        style={{ margin: 0, padding: 0 }}
-      />
-    </div>
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: -1,  // Make sure it's behind other content
+      }}
+    />
   );
 };
 

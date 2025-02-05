@@ -21,7 +21,7 @@ function About() {
                             <h1> About Qutron </h1>
                             
                             <Textblock
-                                content='hello'
+                                content=''
                                 height='h-32'
                                 backgroundColor='bg-gray-50'
                             />
